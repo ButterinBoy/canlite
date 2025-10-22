@@ -23,6 +23,7 @@ import cors from "cors";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
+const routeCache = new Map();;
 const bareServer = createBareServer("/b/");
 const proxy = httpProxy.createProxyServer({ ws: true, changeOrigin: true });
 
@@ -390,3 +391,17 @@ if(process.env.environment === "testing") {
     console.log("Domain validation server running on http://localhost:4000");
   });
 }
+
+proxy.on('error', (err, req, res) => {
+    console.error('Proxy error:', err);
+    if (res && !res.headersSent) {
+        res.writeHead(502, { 'Content-Type': 'text/plain' });
+    }
+    if (res && !res.writableEnded) res.end('Bad Gateway');
+});
+
+proxy.on('proxyReq', (pReq) => {
+    pReq.setTimeout(10000, () => {
+        try { pReq.destroy(); } catch (e) {}
+    });
+});
