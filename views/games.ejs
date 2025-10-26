@@ -91,10 +91,6 @@
     "free-web-proxy.org"
 ]; %>
 
-<% if (!blockedHosts.includes(hostname)) { %>
-    <script async type='text/javascript' src='//pl27932047.effectivegatecpm.com/57/d6/b3/57d6b3a41d7f9b2309969fdafcca2b6c.js' defer></script>
-<% } %>
-
 <body>
 <!-- Authentication Modal -->
 <div id="authModal" class="modal" >
@@ -271,4 +267,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 <script src="/login/index.js"></script></body>
+<% if (!blockedHosts.includes(hostname)) { %>
+    <script async type='text/javascript' src='//pl27932047.effectivegatecpm.com/57/d6/b3/57d6b3a41d7f9b2309969fdafcca2b6c.js' defer></script>
+<% } %>
 </html>
