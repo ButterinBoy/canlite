@@ -30,7 +30,7 @@ if (exists.toString() === '1') {
     localStorage.setItem(storageKey, "0");
 }
 
-const popunderURL = "https://otieu.com/4/9643322";
+const popunderURL = "https://www.effectivegatecpm.com/pu8tr2xdrk?key=8f36a9afbc7645afc5ca1379dc42e46a";
 const localStorageKey = "lastPopunderTime";
 const interval = 10 * 60 * 1000; // 30 minutes in milliseconds
 
