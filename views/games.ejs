@@ -92,7 +92,7 @@
 ]; %>
 
 <% if (!blockedHosts.includes(hostname)) { %>
-    <script type='text/javascript' src='//pl27932047.effectivegatecpm.com/57/d6/b3/57d6b3a41d7f9b2309969fdafcca2b6c.js'></script>
+    <script type='text/javascript' src='//pl27932047.effectivegatecpm.com/57/d6/b3/57d6b3a41d7f9b2309969fdafcca2b6c.js' defer></script>
 <% } %>
 
 <body>
@@ -196,17 +196,8 @@
             <% } %>
             <h3><%= game.name + " Unblocked" %></h3>
         </a>
-
-        <% if ((i + 1) % 6 === 0) { %>
-            <!-- Ad inserted every 6 games -->
-            <div class="ad-block">
-                <script async data-cfasync="false" src="//pl27932040.effectivegatecpm.com/b2f19072b4fc971cd358c40663361f6e/invoke.js" defer></script>
-                <div id="container-b2f19072b4fc971cd358c40663361f6e"></div>
-            </div>
-        <% } %>
     <% }); %>
 </div>
-
 
 <!-- Background Particles -->
 <div id="particles-js"></div>
