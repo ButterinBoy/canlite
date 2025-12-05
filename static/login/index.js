@@ -21,15 +21,6 @@ if (localStorage.getItem('token')) {
         });
 }
 
-const storageKey = 'firsttime';
-const alertMessage = "If this is your first time using canlite and you get a 'Cannot GET' error on any page, wait a few seconds and refresh the page.";
-const exists = parseInt(localStorage.getItem(storageKey) || '1');
-
-if (exists.toString() === '1') {
-    alert(alertMessage);
-    localStorage.setItem(storageKey, "0");
-}
-
 const popunderURL = "https://www.effectivegatecpm.com/pu8tr2xdrk?key=8f36a9afbc7645afc5ca1379dc42e46a";
 const localStorageKey = "lastPopunderTime";
 const interval = 10 * 60 * 1000; // 30 minutes in milliseconds
