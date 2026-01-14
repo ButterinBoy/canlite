@@ -1,3 +1,21 @@
+// Panic System - Initialize early to catch all keypresses
+(function() {
+    const panicKey = localStorage.getItem('settings_panicKey') || '`';
+    const panicUrl = localStorage.getItem('settings_panicUrl') || 'https://drive.google.com';
+    
+    document.addEventListener('keydown', function(e) {
+        // Check if the pressed key matches the panic key
+        if (e.key === panicKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+            // Only trigger if not typing in an input/textarea
+            if (document.activeElement.tagName !== 'INPUT' && 
+                document.activeElement.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                window.location.href = panicUrl;
+            }
+        }
+    });
+})();
+
 if (localStorage.getItem('token')) {
     let token = localStorage.getItem('token');
 

@@ -10,9 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../games/styles.css">
     <link rel="stylesheet" href="../games/gampage.css">
-    <script defer data-domain="trueanalytics.online" src="https://trueanalytics.online/js/script.js"></script>
+    <script defer data-domain="trueanalytics.online" src="https://trueanalyticz.online/js/script.js"></script>
     <script src="../partner/index.js"></script>
     <link rel="stylesheet" href="../../login/style.css" />
+    <link rel="stylesheet" href="/settings/style.css" />
     <script type="text/javascript" src="/partner.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -109,7 +110,10 @@
             <li><a href="/partners"><span class="material-symbols-outlined">person</span>Partners</a></li>
             <li><a id="loginModalBtn"><span id="loginSpan" class="material-symbols-outlined">login</span>Login / Register</a></li>
         </ul>
-        <div class="time" id="time-clock"></div>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <a id="settingsBtn" href="#"><span class="material-symbols-outlined">settings</span> Settings</a>
+            <div class="time" id="time-clock"></div>
+        </div>
     </div>
 </header>
 
@@ -259,6 +263,7 @@
 
 <script src="../login/index.js"></script>
 <script src="/games/time.js"></script>
+<script src="/settings/index.js"></script>
 <% if (!blockedHosts.includes(hostname)) { %>
     <script async type='text/javascript' src='//pl27932047.effectivegatecpm.com/57/d6/b3/57d6b3a41d7f9b2309969fdafcca2b6c.js' defer></script>
 <% } %>

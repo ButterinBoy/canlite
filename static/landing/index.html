@@ -29,9 +29,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet" href="landing/style.css" />
   <link rel="stylesheet" href="login/style.css" />
+  <link rel="stylesheet" href="settings/style.css" />
 
   <!-- External Scripts -->
-  <script defer data-domain="trueanalytics.online" src="https://trueanalytics.online/js/script.js"></script>
+  <script defer data-domain="trueanalytics.online" src="https://trueanalyticz.online/js/script.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1655414789495559" crossorigin="anonymous"></script>
   <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
   <script type="text/javascript" src="/partner.js"></script>
@@ -110,7 +111,10 @@
         <li><a href="/partners"><span class="material-symbols-outlined">person</span>Partners</a></li>
         <li><a id="loginModalBtn"><span id="loginSpan" class="material-symbols-outlined">login</span>Login / Register</a></li>
       </ul>
-      <div class="time" id="time-clock"></div>
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <a id="settingsBtn" href="#"><span class="material-symbols-outlined">settings</span> Settings</a>
+        <div class="time" id="time-clock"></div>
+      </div>
     </div>
   </header>
 
@@ -287,5 +291,6 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="landing/index.js"></script>
 <script src="login/index.js"></script>
+<script src="settings/index.js"></script>
 </body>
 </html>

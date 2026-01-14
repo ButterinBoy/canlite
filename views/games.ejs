@@ -7,7 +7,7 @@
     <title>CanLite - Unblocked Games</title>
 
     <!-- Analytics and Ads -->
-    <script defer data-domain="trueanalytics.online" src="https://trueanalytics.online/js/script.js"></script>
+    <script defer data-domain="trueanalytics.online" src="https://trueanalyticz.online/js/script.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1655414789495559" crossorigin="anonymous"></script>
 
     <!-- Stylesheets -->
@@ -17,6 +17,7 @@
     <link href="/games/games.css" rel="stylesheet" type="text/css">
     <link href="/games/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/login/style.css">
+    <link rel="stylesheet" href="/settings/style.css">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <script type="text/javascript" src="/partner.js"></script>
 
@@ -138,7 +139,10 @@
         <li><a href="/partners"><span class="material-symbols-outlined">person</span>Partners</a></li>
         <li><a id="loginModalBtn"><span id="loginSpan" class="material-symbols-outlined">login</span>Login / Register</a></li>
     </div>
-    <div class="time" id="time-clock"></div>
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <a id="settingsBtn" href="#"><span class="material-symbols-outlined">settings</span> Settings</a>
+        <div class="time" id="time-clock"></div>
+    </div>
 </div>
 
 <h1 style="text-align: center;">Unblocked Games</h1>
@@ -266,7 +270,9 @@
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-<script src="/login/index.js"></script></body>
+<script src="/login/index.js"></script>
+<script src="/settings/index.js"></script>
+</body>
 <% if (!blockedHosts.includes(hostname)) { %>
     <script async type='text/javascript' src='//pl27932047.effectivegatecpm.com/57/d6/b3/57d6b3a41d7f9b2309969fdafcca2b6c.js' defer></script>
 <% } %>
