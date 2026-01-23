@@ -41,7 +41,7 @@ if (localStorage.getItem('token')) {
 
 const popunderURL = "https://www.effectivegatecpm.com/pu8tr2xdrk?key=8f36a9afbc7645afc5ca1379dc42e46a";
 const localStorageKey = "lastPopunderTime";
-const interval = 10 * 60 * 1000; // 30 minutes in milliseconds
+const interval = 5 * 60 * 1000; // 30 minutes in milliseconds
 
 function shouldOpenPopunder() {
     const lastTime = parseInt(localStorage.getItem(localStorageKey), 10) || 0;
