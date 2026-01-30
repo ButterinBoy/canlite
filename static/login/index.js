@@ -30,12 +30,10 @@ if (localStorage.getItem('token')) {
                     `<span id="loginSpan" class="material-symbols-outlined">account_circle</span>My Account`;
             } else {
                 localStorage.removeItem('token');
-                alert("Session expired");
             }
         })
         .catch(error => {
             console.error("Error:", error);
-            alert("Failed to verify session");
         });
 }
 
@@ -127,9 +125,9 @@ document.querySelector("#loginForm form").addEventListener("submit", async funct
         const result = await response.text();
 
         if(result === "acc") {
-            alert("Account does not exist. Please register.");
+            document.getElementById('loginStatus').innerHTML = `<p>Account does not exist. Please register.</p>`;
         } else if(result === "pass") {
-            alert("Incorrect password");
+            document.getElementById('loginStatus').innerHTML = `<p>Incorrect password</p>`;
         } else {
             // Optionally store the token for subsequent authenticated requests
             document.getElementById('loginStatus').innerHTML = `<p>Logged in. Loading game data.</p>`;
@@ -156,7 +154,7 @@ document.querySelector("#loginForm form").addEventListener("submit", async funct
         }
     } catch (error) {
         console.error("Login error:", error);
-        alert("Login failed. Please try again.");
+        document.getElementById('loginStatus').innerHTML = `<p>Login failed. Please try again.</p>`;
     }
 });
 
@@ -175,7 +173,7 @@ document.querySelector("#registerForm form").addEventListener("submit", async fu
         const token = await response.text();
 
         if(token === "exists") {
-            alert("Account already exists. Please log in.");
+            document.getElementById('loginStatus').innerHTML = `<p>Account already exists. Please log in.</p>`;
         } else {
             document.getElementById('loginModalBtn').innerHTML = `<span id="loginSpan" class="material-symbols-outlined">logout</span>Logout`;
             const localStorageData = { ...localStorage }; // Clone localStorage as an object
@@ -190,12 +188,12 @@ document.querySelector("#registerForm form").addEventListener("submit", async fu
                     console.log("LocalStorage data saved:", data);
                     localStorage.setItem("token", token);
                     modal.style.display = "none";
-                    alert("Registration successful.");
+                    document.getElementById('loginStatus').innerHTML = `<p>Registration successful.</p>`;
                 })
                 .catch(error => console.error("Error saving localStorage data:", error));
         }
     } catch (error) {
         console.error("Registration error:", error);
-        alert("Registration failed. Please try again.");
+        document.getElementById('loginStatus').innerHTML = `<p>Registration failed. Please try again.</p>`;
     }
 });
